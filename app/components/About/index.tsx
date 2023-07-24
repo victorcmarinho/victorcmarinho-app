@@ -28,9 +28,9 @@ const About = MOF<HTMLElement>((_, ref) => (
         <p className="max-w-[496px] mb-mb2">
           Exerço a função de desenvolvedor front-end na empresa Reclame Aqui e
           tenho uma trajetória profissional rica, trabalhando em diversos
-          projetos com empresas/projetos renomadas, como a Zappts, GoCart,
-          Santander, Auttar, Getnet, Ultragaz e iClubs. Essas oportunidades têm
-          me permitido expandir meus conhecimentos e habilidades na área de
+          projetos com empresas renomadas, como a Zappts, GoCart, Santander,
+          Auttar, Getnet, Ultragaz e iClubs. Essas oportunidades têm me
+          permitido expandir meus conhecimentos e habilidades na área de
           desenvolvimento de sistemas.
         </p>
         <p className="max-w-[496px] mb-mb2">
