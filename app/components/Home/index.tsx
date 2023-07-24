@@ -8,8 +8,9 @@ const Home = MOF<HTMLElement>((_, ref) => (
   <section
     ref={ref}
     className="max-w-5xl mr-auto ml-auto h-screen flex justify-center items-center"
+    id="home"
   >
-    <div className="flex flex-col mr-mb2  ml-mb2">
+    <div className="flex flex-col mr-mb2  ml-mb2 gap-8">
       <div className="flex flex-row relative flex-wrap-reverse gap-8  ">
         <div>
           <h1 className="text-6xl mb-mb5 font-default">
@@ -33,7 +34,7 @@ const Home = MOF<HTMLElement>((_, ref) => (
             src={"https://avatars.githubusercontent.com/u/15037403?v=4"}
             width={"290"}
             height={"290"}
-            className="rounded-full"
+            className="rounded-full w-auto h-full"
           ></Image>
         </div>
       </div>
