@@ -27,35 +27,35 @@ const Header = MOF<HTMLElement>((_, ref) => {
         >
           <ul className="flex gap-8 max-md:text-white max-md:flex-col">
             <ItemLink
-              href="#home"
+              href="/#home"
               activated={activated === "#home"}
               onClick={() => setActivated("#home")}
             >
               Home
             </ItemLink>
             <ItemLink
-              href="#about"
+              href="/#about"
               activated={activated === "#about"}
               onClick={() => setActivated("#about")}
             >
               About
             </ItemLink>
             <ItemLink
-              href="#skills"
+              href="/#skills"
               activated={activated === "#skills"}
               onClick={() => setActivated("#skills")}
             >
               Skills
             </ItemLink>
             <ItemLink
-              href="#work"
+              href="/#work"
               activated={activated === "#work"}
               onClick={() => setActivated("#work")}
             >
               Work
             </ItemLink>
             <ItemLink
-              href="#contact"
+              href="/#contact"
               activated={activated === "#contact"}
               onClick={() => setActivated("#contact")}
             >
