@@ -54,13 +54,6 @@ const Header = MOF<HTMLElement>((_, ref) => {
             >
               Work
             </ItemLink>
-            <ItemLink
-              href="/#contact"
-              activated={activated === "#contact"}
-              onClick={() => setActivated("#contact")}
-            >
-              Contact
-            </ItemLink>
           </ul>
         </div>
         <div className="block md:hidden">

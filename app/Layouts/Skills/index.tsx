@@ -1,7 +1,7 @@
 import MOF from "@/app/Drivers";
-import { Title } from "../Title";
+import { Title } from "../../components/Title";
 import Image from "next/image";
-import SkillLevel from "../SkillLevel";
+import SkillLevel from "../../components/SkillLevel";
 
 const Skills = MOF<HTMLElement>((_, ref) => (
   <section
@@ -10,7 +10,7 @@ const Skills = MOF<HTMLElement>((_, ref) => (
     className="max-w-5xl mr-auto ml-auto flex flex-col justify-center items-center"
   >
     <Title as="h2">Skills</Title>
-    <div className="flex flex-row flex-wrap gap-12 justify-between">
+    <div className="flex flex-row flex-wrap gap-12 justify-center items-center">
       <div className="flex flex-col">
         <Title as="h3"> Habilidades profisonais</Title>
         <p className="max-w-[496px] mb-mb2">

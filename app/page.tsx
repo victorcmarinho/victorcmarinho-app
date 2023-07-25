@@ -1,11 +1,13 @@
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Footer from "./Layouts/Footer";
+import Main from "./Layouts/Main";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Header />
       <Main />
+      <Footer />
     </>
   );
 }
