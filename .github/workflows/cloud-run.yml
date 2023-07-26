@@ -1,4 +1,4 @@
-name: helpbatt-web
+name: victorcmarinho-app
 
 on:
   push:
@@ -9,7 +9,7 @@ env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
   REGION: us-east1
   # project-name but it can be anything you want
-  REPO_NAME: helpbatt-web
+  REPO_NAME: victorcmarinho-app
 
 jobs:
   build-and-deploy:

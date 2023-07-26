@@ -2,7 +2,7 @@ FROM node:20.3.1-alpine as dependencies
 WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm ci --only=production --omit=dev
+RUN npm ci --only=production
 
 FROM node:20.3.1-alpine as builder
 WORKDIR /app
@@ -19,7 +19,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-USER nextjs
 EXPOSE 3000
 
 CMD [ "npm", "start" ]
