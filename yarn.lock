@@ -205,11 +205,6 @@
   resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.3.tgz"
   integrity sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
 
-"@types/scrollreveal@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@types/scrollreveal/-/scrollreveal-0.0.8.tgz"
-  integrity sha512-HwD3vSmxjEozI4+uHY7pPxB47gppsv0racBHZreEQFC6K1kBKaIUkCTwUMH6gGFEDmLrgOckfGsTvR/n2yyV6g==
-
 "@typescript-eslint/parser@^5.42.0":
   version "5.62.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.62.0.tgz"
