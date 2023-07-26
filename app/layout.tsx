@@ -20,6 +20,40 @@ const metadataConfig: Metadata = {
     siteName: "https://victorcmarinho.app",
   },
   viewport: { width: "device-width", initialScale: 1 },
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "victorcmarinho",
+    statusBarStyle: "default",
+    startupImage: "/icon-192x192.png",
+  },
+  icons: [
+    {
+      rel: "apple-touch-icon",
+      url: "/icon-192x192.png",
+      sizes: "192x192",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/icon-256x256.png",
+      sizes: "256x256",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/icon-384x384.png",
+      sizes: "384x384",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/icon-512x512.png",
+      sizes: "512x512",
+    },
+    {
+      rel: "icon",
+      url: "/icon-512x512.png",
+      sizes: "512x512",
+    },
+  ],
 };
 
 export const metadata: Metadata = {

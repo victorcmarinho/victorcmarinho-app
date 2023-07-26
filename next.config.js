@@ -1,5 +1,8 @@
+const pwa = require("next-pwa")();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ...pwa,
   images: {
     domains: ["avatars.githubusercontent.com", "raw.githubusercontent.com"],
   },
