@@ -1,8 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import RAVerificadaSelo from "./components/RAVerificadaSelo";
 
-const poppins = Poppins({ weight: ["400", "600"], subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
 
 const metadataConfig: Metadata = {
   title: "Victor Marinho - Fullstack Developer",
@@ -71,8 +75,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>{children}</body>
+    <html lang="en" className={poppins.className}>
+      <body>
+        {children}
+        <RAVerificadaSelo />
+      </body>
     </html>
   );
 }
