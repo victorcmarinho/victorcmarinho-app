@@ -10,8 +10,8 @@ const Skills = MOF<HTMLElement>((_, ref) => (
     className="max-w-5xl mr-auto ml-auto flex flex-col justify-center items-center"
   >
     <Title as="h2">Skills</Title>
-    <div className="flex flex-row flex-wrap gap-12 justify-center items-center">
-      <div className="flex flex-col">
+    <div className="flex flex-row flex-wrap gap-12 justify-center items-start">
+      <div className="flex flex-col flex-1 min-w-[300px] max-w-[496px]">
         <Title as="h3"> Habilidades profisonais</Title>
         <p className="max-w-[496px] mb-mb2">
           Destaque em meus trabalhos anteriores a liderança técnica em uma
@@ -32,9 +32,9 @@ const Skills = MOF<HTMLElement>((_, ref) => (
       <Image
         alt="Imagem sobre um computador"
         src={"/work3.jpg"}
-        width={"490"}
-        height={"330"}
-        className="rounded-lg w-auto h-full max-w-md self-center "
+        width={490}
+        height={330}
+        className="rounded-lg w-auto h-full max-w-md self-center object-cover"
       ></Image>
     </div>
   </section>

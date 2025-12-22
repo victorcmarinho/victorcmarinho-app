@@ -1,28 +1,147 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4070f4;
+  --color-secondary: #0e2431;
+
+  --font-sans: Poppins, sans-serif;
+
+  --text-header: 3rem;
+  --text-body: 3.5rem;
+  --text-body--line-height: 3.5rem;
+  --text-h2: 2rem;
+  --text-h2--line-height: 2rem;
+  --text-normal: 1rem;
+  --text-normal--line-height: 1rem;
+
+  --font-weight-default: 600;
+
+  --margin-mb1: 0.5rem;
+  --margin-mb2: 1rem;
+  --margin-mb3: 1.5rem;
+  --margin-mb4: 2rem;
+  --margin-mb5: 2.5rem;
+  --margin-mb6: 3rem;
+
+  --z-index-back: -10;
+  --z-index-normal: 1;
+  --z-index-tooltip: 10;
+  --z-index-fixed: 100;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer utilities {
+  .mb-mb1 {
+    margin-bottom: var(--margin-mb1);
+  }
+
+  .mb-mb2 {
+    margin-bottom: var(--margin-mb2);
+  }
+
+  .mb-mb3 {
+    margin-bottom: var(--margin-mb3);
+  }
+
+  .mb-mb4 {
+    margin-bottom: var(--margin-mb4);
+  }
+
+  .mb-mb5 {
+    margin-bottom: var(--margin-mb5);
+  }
+
+  .mb-mb6 {
+    margin-bottom: var(--margin-mb6);
+  }
+
+  .mt-mb2 {
+    margin-top: var(--margin-mb2);
+  }
+
+  .mr-mb2 {
+    margin-right: var(--margin-mb2);
+  }
+
+  .ml-mb2 {
+    margin-left: var(--margin-mb2);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .font-default {
+    font-weight: var(--font-weight-default);
+  }
+
+  .text-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+  }
+
+  .z-fixed {
+    z-index: var(--z-index-fixed);
+  }
+
+  .z-back {
+    z-index: var(--z-index-back);
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
 
 /*===== VARIABLES CSS =====*/
-:root{
+:root {
   --header-height: 3rem;
   --font-semi: 600;
 }
 
 /*===== Colores =====*/
-:root{
-  --first-color: #4070F4;
-  --second-color: #0E2431;
+:root {
+  --first-color: #4070f4;
+  --second-color: #0e2431;
 }
 
 /*===== Fuente y tipografia =====*/
-:root{
-  --body-font: 'Poppins', sans-serif;
+:root {
+  --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
 }
-@media screen and (min-width: 768px){
-  :root{
+@media screen and (min-width: 768px) {
+  :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
@@ -30,7 +149,7 @@
 }
 
 /*===== Margenes =====*/
-:root{
+:root {
   --mb-1: 0.5rem;
   --mb-2: 1rem;
   --mb-3: 1.5rem;
@@ -40,7 +159,7 @@
 }
 
 /*===== z index =====*/
-:root{
+:root {
   --z-back: -10;
   --z-normal: 1;
   --z-tooltip: 10;
@@ -48,32 +167,35 @@
 }
 
 /*===== BASE =====*/
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-body{
+body {
   margin: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
 }
-h1,h2,p{
+h1,
+h2,
+p {
   margin: 0;
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
-img{
+img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-

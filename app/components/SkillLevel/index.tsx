@@ -37,7 +37,7 @@ const SkillLevel = MOF<HTMLDivElement, SkillLevelProps>(
         <span>{title}</span>
       </div>
       <div
-        className={`absolute left-0 bottom-0 bg-primary h-1 rounded-lg z-back `}
+        className="absolute left-0 bottom-0 bg-primary h-1 rounded-lg z-back"
         style={{ width: `${pct}%` }}
       ></div>
       <span>{pct}%</span>

@@ -11,21 +11,21 @@ const Header = MOF<HTMLElement>((_, ref) => {
   return (
     <header
       ref={ref}
-      className="flex h-16 items-center justify-center sticky w-full top-0 left-0 z-fixed bg-white shadow-[0_1px_4px_rgba(146,161,176,.15)] "
+      className="flex h-16 items-center justify-center sticky w-full top-0 left-0 z-fixed bg-white shadow-[0_1px_4px_rgba(146,161,176,.15)]"
     >
       <nav className="flex justify-between max-w-5xl w-full text-secondary font-default mr-mb2 ml-mb2">
         <div>
-          <Link href={"#"} onClick={() => setActivated("#home")}>
+          <Link href={"/#home"} onClick={() => setActivated("#home")} className="text-secondary hover:text-primary transition-colors">
             Victor Marinho
           </Link>
         </div>
         <div
           id="nav-menu"
-          className={`max-md:fixed max-md:top-16  max-md:w-4/5 max-md:h-full max-md:p-8 max-md:bg-secondary max-md:transition-all ${
-            showMenu ? "right-0" : "max-md:right-[-100%]"
+          className={`max-md:fixed max-md:top-16 max-md:w-4/5 max-md:h-full max-md:p-8 max-md:bg-secondary max-md:transition-all max-md:duration-300 ${
+            showMenu ? "max-md:right-0" : "max-md:-right-full"
           }`}
         >
-          <ul className="flex gap-8 max-md:text-white max-md:flex-col">
+          <ul className="flex gap-8 max-md:text-white max-md:flex-col max-md:gap-4">
             <ItemLink
               href="/#home"
               activated={activated === "#home"}

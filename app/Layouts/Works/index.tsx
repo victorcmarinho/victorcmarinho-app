@@ -19,21 +19,22 @@ const Works = async () => {
       id="work"
     >
       <Title as="h2">Work</Title>
-      <ul className="flex flex-wrap gap-8 justify-center">
+      <ul className="flex flex-wrap gap-8 justify-center max-w-5xl">
         {response.map(
           ({ id, html_url, description, name, stargazers_count }) => (
-            <li key={id} className="w-[320px] h-[213px] ">
+            <li key={id} className="w-[320px] min-h-[213px]">
               <Link
                 href={html_url}
                 target="_blank"
-                className="flex flex-col w-full h-full rounded-lg p-5 shadow-[0_4px_25px_rgba(14,36,49,.15)] overflow-hidden"
+                rel="noopener noreferrer"
+                className="flex flex-col w-full h-full rounded-lg p-5 shadow-[0_4px_25px_rgba(14,36,49,.15)] hover:shadow-[0_4px_25px_rgba(14,36,49,.25)] transition-shadow bg-white"
               >
-                <Title as="h3"> {name.replace(/-/gi, " ")}</Title>
-                <span className="text-yellow-300 flex  items-center gap-2">
+                <Title as="h3" className="mb-2"> {name.replace(/-/gi, " ")}</Title>
+                <span className="text-yellow-500 flex items-center gap-2 mb-2">
                   {stargazers_count}
                   <FaStar />
                 </span>
-                <p className="text-ellipsis">{description}</p>
+                <p className="text-ellipsis line-clamp-3 text-sm text-secondary">{description || "Sem descrição"}</p>
               </Link>
             </li>
           )

@@ -17,9 +17,9 @@ const Home = async () => {
       className="max-w-5xl mr-auto ml-auto h-screen flex justify-center items-center"
       id="home"
     >
-      <div className="flex flex-col mr-mb2  ml-mb2 gap-8">
-        <div className="flex flex-row relative flex-wrap-reverse gap-8  ">
-          <div>
+      <div className="flex flex-col mr-mb2 ml-mb2 gap-8">
+        <div className="flex flex-row relative flex-wrap-reverse gap-8 items-center">
+          <div className="flex-1 min-w-[300px]">
             <h1 id="home-title" className="text-6xl mb-mb5 font-default">
               Hi, <br /> I&apos;am{" "}
               <span className="text-primary">Victor Marinho</span> <br />{" "}
@@ -34,14 +34,14 @@ const Home = async () => {
             </Button>
           </div>
 
-          <div className="bg-[rgb(75,111, 236)] rounded-full ">
+          <div className="bg-[rgb(75,111,236)] rounded-full p-1 flex-shrink-0">
             <Image
               id="home-img"
               alt="Imagem de perfil"
               src={avatar_url}
-              width={"290"}
-              height={"290"}
-              className="rounded-full w-auto h-full"
+              width={290}
+              height={290}
+              className="rounded-full object-cover"
               priority
             ></Image>
           </div>

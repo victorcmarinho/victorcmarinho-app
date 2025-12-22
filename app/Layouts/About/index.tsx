@@ -17,16 +17,16 @@ const About = async () => {
       className="max-w-5xl mr-auto ml-auto flex flex-col justify-center items-center"
     >
       <Title as="h2">Sobre</Title>
-      <div className="flex flex-row flex-wrap gap-12 justify-between">
+      <div className="flex flex-row flex-wrap gap-12 justify-between items-start">
         <Image
           id="about-img"
           alt="Imagem de perfil"
           src={avatar_url}
-          width={"300"}
-          height={"390"}
-          className="rounded-lg w-auto h-full flex-1"
+          width={300}
+          height={390}
+          className="rounded-lg w-auto h-full flex-1 max-w-[300px] object-cover"
         ></Image>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 min-w-[300px]">
           <Title id="about-title" as="h3">
             Sobre mim
           </Title>
