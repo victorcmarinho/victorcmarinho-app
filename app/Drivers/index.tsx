@@ -1,6 +1,6 @@
-import { ForwardRefRenderFunction, forwardRef, memo } from "react";
+import { ForwardRefRenderFunction, forwardRef, memo, PropsWithoutRef } from "react";
 
-function MOF<T, P = {}>(render: ForwardRefRenderFunction<T, P>) {
+function MOF<T, P = {}>(render: ForwardRefRenderFunction<T, PropsWithoutRef<P>>) {
   return memo(forwardRef<T, P>(render));
 }
 
