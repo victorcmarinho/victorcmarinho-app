@@ -21,9 +21,8 @@ const Header = MOF<HTMLElement>((_, ref) => {
         </div>
         <div
           id="nav-menu"
-          className={`max-md:fixed max-md:top-16 max-md:w-4/5 max-md:h-full max-md:p-8 max-md:bg-secondary max-md:transition-all max-md:duration-300 ${
-            showMenu ? "max-md:right-0" : "max-md:-right-full"
-          }`}
+          className={`max-md:fixed max-md:top-16 max-md:w-4/5 max-md:h-full max-md:p-8 max-md:bg-secondary max-md:transition-all max-md:duration-300 ${showMenu ? "max-md:right-0" : "max-md:-right-full"
+            }`}
         >
           <ul className="flex gap-8 max-md:text-white max-md:flex-col max-md:gap-4">
             <ItemLink
