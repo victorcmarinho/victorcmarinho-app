@@ -34,7 +34,7 @@ const Home = async () => {
             </Button>
           </div>
 
-          <div className="bg-[rgb(75,111,236)] rounded-full p-1 flex-shrink-0">
+          <div className="bg-[rgb(75,111,236)] rounded-full p-1 shrink-0">
             <Image
               id="home-img"
               alt="Imagem de perfil"
