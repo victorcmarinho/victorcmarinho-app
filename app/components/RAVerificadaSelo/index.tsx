@@ -11,18 +11,14 @@ export default function RAVerificadaSelo() {
   return (
     <div style={{ width: "105px", height: "85px", overflow: "hidden", borderRadius: "0.5rem" }}>
       <iframe
-        src="https://verificada.obviostaging.com.br/embed/static?id=SHdwWk5vNjMzS2t6THA5aTp0cmFuc2NvbGV0YS1sb2dpc3RpY2EtYW1iaWVudGFsLWx0ZGE=&model=compact_1"
+        src="https://verificada.reclameaqui.com.br/embed/static?id=NTA1MTI6ZmluYWRvLWRlbC11bml2ZXJzZQ==&model=compact_1"
         width="100%"
         height="100%"
         frameBorder="0"
-        scrolling="no"
-        style={{ border: "none", display: "block", margin: 0, padding: 0 }}
+        style={{ border: "none", display: "block", margin: 0, padding: 0, overflow: "hidden" }}
         title="Selo RA Verificada"
         allowTransparency={true}
-        onLoad={() => {
-          console.log("✅ Iframe do Selo RA Verificada carregado!");
-        }}
-      />
+      ></iframe>
     </div>
   );
 }
