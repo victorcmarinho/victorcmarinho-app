@@ -10,15 +10,16 @@ export default function RAVerificadaSelo() {
 
   return (
     <div style={{ width: "105px", height: "85px", overflow: "hidden", borderRadius: "0.5rem" }}>
-      <iframe
-        src="https://verificada.reclameaqui.com.br/embed/static?id=NTA1MTI6ZmluYWRvLWRlbC11bml2ZXJzZQ==&model=compact_1"
-        width="100%"
-        height="100%"
-        frameBorder="0"
-        style={{ border: "none", display: "block", margin: 0, padding: 0, overflow: "hidden" }}
-        title="Selo RA Verificada"
-        allowTransparency={true}
-      ></iframe>
+      <div id="ra-verified-seal">
+        <script
+          type="text/javascript"
+          id="ra-embed-verified-seal"
+          src="https://s3.amazonaws.com/raichu-beta/ra-verified-dev/bundle.js"
+          data-id="NTA1MTI6ZmluYWRvLWRlbC11bml2ZXJzZQ=="
+          data-target="ra-verified-seal"
+          data-model="horizontal_1"
+        ></script>
+      </div>
     </div>
   );
 }
