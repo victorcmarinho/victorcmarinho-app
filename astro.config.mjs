@@ -6,7 +6,10 @@ import AstroPWA from '@vite-pwa/astro';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [
+      // @ts-expect-error - mismatch de tipagem de versões do Vite entre o Tailwind e o Astro
+      tailwindcss()
+    ]
   },
   integrations: [AstroPWA({
     registerType: 'autoUpdate',
