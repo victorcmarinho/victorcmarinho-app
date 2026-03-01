@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const skills = [
     "Astro",
     "Svelte",
@@ -24,7 +29,7 @@ const skills = [
                 id="skills-heading"
                 class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
             >
-                Habilidades
+                {t("skills.title")}
             </h2>
         </div>
         <ul class="md:col-span-8 flex flex-wrap gap-3">

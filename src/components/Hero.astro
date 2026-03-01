@@ -1,5 +1,9 @@
 ---
 import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -18,14 +22,13 @@ import { Image } from "astro:assets";
         <h1
             class="text-5xl md:text-7xl font-extrabold tracking-tight text-balance text-[var(--color-text)]"
         >
-            Hi, I'm <span class="text-[var(--color-primary)]"
-                >Victor C. Marinho</span
-            >
+            {t("hero.greeting")}
+            <span class="text-[var(--color-primary)]">Victor C. Marinho</span>
         </h1>
         <p
             class="text-xl md:text-2xl text-[var(--color-muted)] max-w-2xl text-balance font-light leading-relaxed"
         >
-            Software Developer | Front End | Angular · React · Flutter
+            {t("hero.role")}
         </p>
         <nav
             aria-label="Ações de Introdução"
@@ -36,13 +39,13 @@ import { Image } from "astro:assets";
                 class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-[var(--color-bg)] bg-[var(--color-text)] hover:opacity-80 transition-opacity duration-200"
                 aria-label="Entre em contato via Email"
             >
-                Contato
+                {t("nav.contact")}
             </a>
             <a
                 href="#about"
                 class="inline-flex items-center justify-center px-6 py-3 border border-[var(--color-border)] text-base font-medium rounded-full text-[var(--color-text)] hover:bg-[var(--color-border)] transition-colors duration-200"
             >
-                Ver mais
+                {t("nav.more")}
             </a>
         </nav>
     </div>
