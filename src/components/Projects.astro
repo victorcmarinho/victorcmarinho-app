@@ -48,51 +48,49 @@ const projects = [
         Alguns dos meus projetos e contribuições open source recentes no GitHub.
       </p>
     </div>
-    <div
-      class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6"
-      role="list"
-    >
+    <ul class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
       {
         projects.map((project) => (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group block p-6 rounded-2xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] outline-none"
-            role="listitem"
-          >
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-lg font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
-                {project.name}
-              </h3>
-              <svg
-                class="h-5 w-5 text-[var(--color-muted)] group-hover:text-[var(--color-primary)] transition-colors"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          <li>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block p-6 h-full rounded-2xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] outline-none"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-lg font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+                  {project.name}
+                </h3>
+                <svg
+                  class="h-5 w-5 text-[var(--color-muted)] group-hover:text-[var(--color-primary)] transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-light text-[var(--color-muted)] mb-4 h-16 overflow-hidden">
+                {project.description}
+              </p>
+              <div class="flex items-center text-xs font-medium text-[var(--color-muted)]">
+                <span
+                  class="inline-block w-2.5 h-2.5 rounded-full mr-2 bg-[var(--color-primary)] opacity-80"
+                  aria-hidden="true"
                 />
-              </svg>
-            </div>
-            <p class="text-sm font-light text-[var(--color-muted)] mb-4 h-16 overflow-hidden">
-              {project.description}
-            </p>
-            <div class="flex items-center text-xs font-medium text-[var(--color-muted)]">
-              <span
-                class="inline-block w-2.5 h-2.5 rounded-full mr-2 bg-[var(--color-primary)] opacity-80"
-                aria-hidden="true"
-              />
-              {project.language}
-            </div>
-          </a>
+                {project.language}
+              </div>
+            </a>
+          </li>
         ))
       }
-    </div>
+    </ul>
   </div>
 </section>

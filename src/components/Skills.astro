@@ -27,17 +27,14 @@ const skills = [
                 Habilidades
             </h2>
         </div>
-        <div class="md:col-span-8 flex flex-wrap gap-3" role="list">
+        <ul class="md:col-span-8 flex flex-wrap gap-3">
             {
                 skills.map((skill) => (
-                    <span
-                        class="px-5 py-2 border border-[var(--color-border)] text-[var(--color-text)] rounded-full text-sm font-medium hover:bg-[var(--color-border)] hover:text-[var(--color-primary)] transition duration-300 cursor-default"
-                        role="listitem"
-                    >
+                    <li class="px-5 py-2 border border-[var(--color-border)] text-[var(--color-text)] rounded-full text-sm font-medium hover:bg-[var(--color-border)] hover:text-[var(--color-primary)] transition duration-300 cursor-default">
                         {skill}
-                    </span>
+                    </li>
                 ))
             }
-        </div>
+        </ul>
     </div>
 </section>
