@@ -16,6 +16,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "@vite-pwa/astro": "^1.2.0",
+    "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   }
 }
