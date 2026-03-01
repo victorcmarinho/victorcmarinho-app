@@ -2,58 +2,97 @@
 const projects = [
   {
     name: "EasierDrop",
-    description: "O Easier Drop é um aplicativo leve e intuitivo que facilita a transferência de arquivos entre pastas no seu computador (macOS).",
+    description:
+      "O Easier Drop é um aplicativo leve e intuitivo que facilita a transferência de arquivos entre pastas no seu computador (macOS).",
     url: "https://github.com/victorcmarinho/EasierDrop",
-    language: "Dart"
+    language: "Dart",
   },
   {
     name: "CRUD-MVC-PHP",
-    description: "Sistema simplificado de CRUD utilizando arquitetura MVC e PHP puro.",
+    description:
+      "Sistema simplificado de CRUD utilizando arquitetura MVC e PHP puro.",
     url: "https://github.com/victorcmarinho/CRUD-MVC-PHP",
-    language: "PHP"
+    language: "PHP",
   },
   {
     name: "CRUDSimplesNode",
-    description: "Um projeto de CRUD bem simples focado em backend utilizando NodeJS e Express.",
+    description:
+      "Um projeto de CRUD bem simples focado em backend utilizando NodeJS e Express.",
     url: "https://github.com/victorcmarinho/CRUDSimplesNode",
-    language: "JavaScript"
+    language: "JavaScript",
   },
   {
     name: "victorcmarinho-app",
-    description: "Repositório do meu portfólio e página pessoal, reescrito em Astro.",
+    description:
+      "Repositório do meu portfólio e página pessoal, reescrito em Astro.",
     url: "https://github.com/victorcmarinho/victorcmarinho-app",
-    language: "TypeScript / Astro"
-  }
+    language: "TypeScript / Astro",
+  },
 ];
 ---
-<section id="projects" class="py-20 border-t border-zinc-800/60">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-        <div class="md:col-span-4">
-            <h2 class="text-3xl font-bold tracking-tight">Projetos</h2>
-            <p class="mt-4 text-zinc-400 font-light text-sm">
-                 Alguns dos meus projetos e contribuições open source recentes no GitHub.
-            </p>
-        </div>
-        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {projects.map((project) => (
-                <a href={project.url} target="_blank" rel="noopener noreferrer" class="group block p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/20 hover:bg-zinc-800/40 hover:border-zinc-700 transition-all duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-indigo-400 transition-colors">
-                            {project.name}
-                        </h3>
-                        <svg class="h-5 w-5 text-zinc-600 group-hover:text-indigo-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                    </div>
-                    <p class="text-sm font-light text-zinc-400 mb-4 h-16 overflow-hidden">
-                        {project.description}
-                    </p>
-                    <div class="flex items-center text-xs font-medium text-zinc-500">
-                        <span class="inline-block w-2.5 h-2.5 rounded-full mr-2 bg-indigo-500/80"></span>
-                        {project.language}
-                    </div>
-                </a>
-            ))}
-        </div>
+
+<section
+  id="projects"
+  class="py-20 border-t border-[var(--color-border)]"
+  aria-labelledby="projects-heading"
+>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-4">
+      <h2
+        id="projects-heading"
+        class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
+      >
+        Projetos
+      </h2>
+      <p class="mt-4 text-[var(--color-muted)] font-light text-sm">
+        Alguns dos meus projetos e contribuições open source recentes no GitHub.
+      </p>
     </div>
+    <div
+      class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6"
+      role="list"
+    >
+      {
+        projects.map((project) => (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block p-6 rounded-2xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] outline-none"
+            role="listitem"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-lg font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+                {project.name}
+              </h3>
+              <svg
+                class="h-5 w-5 text-[var(--color-muted)] group-hover:text-[var(--color-primary)] transition-colors"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </div>
+            <p class="text-sm font-light text-[var(--color-muted)] mb-4 h-16 overflow-hidden">
+              {project.description}
+            </p>
+            <div class="flex items-center text-xs font-medium text-[var(--color-muted)]">
+              <span
+                class="inline-block w-2.5 h-2.5 rounded-full mr-2 bg-[var(--color-primary)] opacity-80"
+                aria-hidden="true"
+              />
+              {project.language}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </section>

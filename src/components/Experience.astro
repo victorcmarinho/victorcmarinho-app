@@ -4,58 +4,78 @@ const experiences = [
     role: "Engenheiro de software sênior",
     company: "Reclame AQUI",
     duration: "mar de 2025 - o momento",
-    description: "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;"
+    description:
+      "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;",
   },
   {
     role: "Engenheira de software Pleno",
     company: "Reclame AQUI",
     duration: "nov de 2022 - mar de 2025",
-    description: "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;"
+    description:
+      "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;",
   },
   {
     role: "Desenvolvedor de front-end Senior",
     company: "Zappts",
     duration: "mai de 2021 - nov de 2022",
-    description: "Liderança técnica e desenvolvimento focado em escalabilidade."
+    description:
+      "Liderança técnica e desenvolvimento focado em escalabilidade.",
   },
   {
     role: "Desenvolvedor de front-end",
     company: "Zappts",
     duration: "mai de 2020 - nov de 2022",
-    description: "Ajudando equipes a construir e projetar arquiteturas web e mobile com foco em escalabilidade, boas práticas e código limpo. Tecnologias como Angular, React, Typescript, e AWS."
+    description:
+      "Ajudando equipes a construir e projetar arquiteturas web e mobile com foco em escalabilidade, boas práticas e código limpo. Tecnologias como Angular, React, Typescript, e AWS.",
   },
   {
     role: "Desenvolvedor de front-end",
     company: "Hipr Sistemas",
     duration: "out de 2018 - mai de 2020",
-    description: "Desenvolvimento de interfaces e aplicações front-end."
+    description: "Desenvolvimento de interfaces e aplicações front-end.",
   },
   {
     role: "Desenvolvedor da web",
     company: "Autônomo",
     duration: "ago de 2017 - mai de 2020",
-    description: "Criação de soluções web personalizadas."
-  }
+    description: "Criação de soluções web personalizadas.",
+  },
 ];
 ---
-<section id="experience" class="py-20 border-t border-zinc-800/60">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-        <div class="md:col-span-4">
-            <h2 class="text-3xl font-bold tracking-tight">Experiência</h2>
-        </div>
-        <div class="md:col-span-8 space-y-12">
-            {experiences.map((exp) => (
-                <div class="group relative flex flex-col gap-2 pb-1 transition-all">
-                    <h3 class="text-xl font-semibold text-zinc-100">{exp.role}</h3>
-                    <div class="flex items-center justify-between text-sm text-zinc-400">
-                        <span class="font-medium text-indigo-400">{exp.company}</span>
-                        <span>{exp.duration}</span>
-                    </div>
-                    <p class="mt-2 text-zinc-400 leading-relaxed font-light text-base">
-                        {exp.description}
-                    </p>
-                </div>
-            ))}
-        </div>
+
+<section
+  id="experience"
+  class="py-20 border-t border-[var(--color-border)]"
+  aria-labelledby="experience-heading"
+>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-4">
+      <h2
+        id="experience-heading"
+        class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
+      >
+        Experiência
+      </h2>
     </div>
+    <div class="md:col-span-8 space-y-12">
+      {
+        experiences.map((exp) => (
+          <article class="group relative flex flex-col gap-2 pb-1 transition-all">
+            <h3 class="text-xl font-semibold text-[var(--color-text)]">
+              {exp.role}
+            </h3>
+            <div class="flex items-center justify-between text-sm text-[var(--color-muted)]">
+              <span class="font-medium text-[var(--color-primary)]">
+                {exp.company}
+              </span>
+              <span>{exp.duration}</span>
+            </div>
+            <p class="mt-2 text-[var(--color-muted)] leading-relaxed font-light text-base">
+              {exp.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>

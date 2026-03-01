@@ -2,11 +2,27 @@
 
 @layer base {
   :root {
-    --color-bg: #09090b;
-    --color-text: #fafafa;
-    --color-primary: #6366f1; /* Indigo 500 */
-    --color-muted: #a1a1aa; /* Zinc 400 */
-    --color-border: #27272a; /* Zinc 800 */
+    --color-bg: #fafafa;
+    --color-text: #09090b;
+    --color-primary: #4f46e5;
+    /* Indigo 600 */
+    --color-muted: #52525b;
+    /* Zinc 600 */
+    --color-border: #e4e4e7;
+    /* Zinc 200 */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #09090b;
+      --color-text: #fafafa;
+      --color-primary: #818cf8;
+      /* Indigo 400 */
+      --color-muted: #a1a1aa;
+      /* Zinc 400 */
+      --color-border: #27272a;
+      /* Zinc 800 */
+    }
   }
 
   body {

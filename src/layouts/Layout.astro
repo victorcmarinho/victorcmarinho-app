@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
@@ -12,21 +12,30 @@ const { title } = Astro.props;
 <html lang="pt-BR" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Victor C. Marinho - Software Developer | Front End | Angular React Flutter" />
+		<meta
+			name="description"
+			content="Victor C. Marinho - Software Developer | Front End | Angular React Flutter"
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="theme-color" content="#4070F4" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/icon-192x192.png" />
+		<link rel="manifest" href="/manifest.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
-        
-        <!-- Google Fonts: Inter as the primary sans-serif -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        
+
+		<!-- Google Fonts: Inter as the primary sans-serif -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
 		<title>{title}</title>
 	</head>
-	<body class="bg-zinc-950 text-zinc-50 font-sans antialiased selection:bg-indigo-500/30">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
-		    <slot />
-        </div>
+	<body class="font-sans antialiased selection:bg-indigo-500/30">
+		<div class="max-w-4xl mx-auto px-6 lg:px-8">
+			<slot />
+		</div>
 	</body>
 </html>
