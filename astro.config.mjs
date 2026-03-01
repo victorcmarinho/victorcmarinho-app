@@ -6,7 +6,6 @@ import AstroPWA from '@vite-pwa/astro';
 // https://astro.build/config
 export default defineConfig({
   site: "https://victorcmarinho.github.io",
-  base: "/victorcmarinho-app",
   i18n: {
     defaultLocale: "en",
     locales: ["en", "pt", "es"],
@@ -33,16 +32,16 @@ export default defineConfig({
       background_color: "#fff",
       display: "standalone",
       icons: [
-        { src: "/victorcmarinho-app/icon-192x192.webp", sizes: "192x192", type: "image/webp" },
-        { src: "/victorcmarinho-app/icon-256x256.webp", sizes: "256x256", type: "image/webp" },
-        { src: "/victorcmarinho-app/icon-384x384.webp", sizes: "384x384", type: "image/webp" },
-        { src: "/victorcmarinho-app/icon-512x512.webp", sizes: "512x512", type: "image/webp", purpose: "any maskable" }
+        { src: "/icon-192x192.webp", sizes: "192x192", type: "image/webp" },
+        { src: "/icon-256x256.webp", sizes: "256x256", type: "image/webp" },
+        { src: "/icon-384x384.webp", sizes: "384x384", type: "image/webp" },
+        { src: "/icon-512x512.webp", sizes: "512x512", type: "image/webp", purpose: "any maskable" }
       ]
     },
     workbox: {
       globDirectory: 'dist',
       globPatterns: ['**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}'],
-      navigateFallback: '/victorcmarinho-app/'
+      navigateFallback: '/'
     }
   })]
 });
