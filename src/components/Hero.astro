@@ -8,7 +8,7 @@ import { Image } from "astro:assets";
 >
     <div class="space-y-6">
         <Image
-            src="/perfil.webp"
+            src={`${import.meta.env.BASE_URL}perfil.webp`}
             alt="Victor Marinho"
             loading="eager"
             width={128}
