@@ -1,34 +1,42 @@
 ---
-const projects = [
-  {
-    name: "EasierDrop",
-    description:
-      "O Easier Drop é um aplicativo leve e intuitivo que facilita a transferência de arquivos entre pastas no seu computador (macOS).",
-    url: "https://github.com/victorcmarinho/EasierDrop",
-    language: "Dart",
-  },
-  {
-    name: "CRUD-MVC-PHP",
-    description:
-      "Sistema simplificado de CRUD utilizando arquitetura MVC e PHP puro.",
-    url: "https://github.com/victorcmarinho/CRUD-MVC-PHP",
-    language: "PHP",
-  },
-  {
-    name: "CRUDSimplesNode",
-    description:
-      "Um projeto de CRUD bem simples focado em backend utilizando NodeJS e Express.",
-    url: "https://github.com/victorcmarinho/CRUDSimplesNode",
-    language: "JavaScript",
-  },
-  {
-    name: "victorcmarinho-app",
-    description:
-      "Repositório do meu portfólio e página pessoal, reescrito em Astro.",
-    url: "https://github.com/victorcmarinho/victorcmarinho-app",
-    language: "TypeScript / Astro",
-  },
-];
+interface GithubRepo {
+  name: string;
+  description: string;
+  html_url: string;
+  language: string;
+  updated_at: string;
+}
+
+// Fetch the 6 most recently updated public repositories
+const response = await fetch(
+  "https://api.github.com/users/victorcmarinho/repos?sort=updated&per_page=6",
+);
+let githubProjects: GithubRepo[] = [];
+
+if (response.ok) {
+  githubProjects = await response.json();
+} else {
+  console.error("Failed to fetch Github repos:", response.statusText);
+}
+
+// Map them to match our existing structure, or fallback if fetching fails
+const projects =
+  githubProjects.length > 0
+    ? githubProjects.map((repo) => ({
+        name: repo.name,
+        description: repo.description || "Sem descrição disponível.",
+        url: repo.html_url,
+        language: repo.language || "Markdown",
+      }))
+    : [
+        {
+          name: "EasierDrop",
+          description:
+            "O Easier Drop é um aplicativo leve e intuitivo que facilita a transferência de arquivos entre pastas no seu computador (macOS).",
+          url: "https://github.com/victorcmarinho/EasierDrop",
+          language: "Dart",
+        },
+      ];
 ---
 
 <section
@@ -38,15 +46,18 @@ const projects = [
 >
   <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
     <div class="md:col-span-4">
-      <h2
-        id="projects-heading"
-        class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
-      >
-        Projetos
-      </h2>
-      <p class="mt-4 text-[var(--color-muted)] font-light text-sm">
-        Alguns dos meus projetos e contribuições open source recentes no GitHub.
-      </p>
+      <div>
+        <h2
+          id="projects-heading"
+          class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
+        >
+          Projetos
+        </h2>
+        <p class="mt-4 text-[var(--color-muted)] font-light text-sm">
+          Alguns dos meus projetos e contribuições open source recentes no
+          GitHub.
+        </p>
+      </div>
     </div>
     <ul class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
       {
@@ -92,5 +103,30 @@ const projects = [
         ))
       }
     </ul>
+  </div>
+
+  <!-- Github Contributions Chart -->
+  <div
+    class="mt-16 flex flex-col gap-4"
+    aria-label="Gráfico de contribuições do Github"
+  >
+    <div class="flex items-center gap-4">
+      <h3
+        class="text-sm font-semibold text-[var(--color-text)] uppercase tracking-wider"
+      >
+        Contribuições
+      </h3>
+      <div class="h-px flex-1 bg-[var(--color-border)]"></div>
+    </div>
+    <div
+      class="rounded-xl overflow-x-auto p-4 md:p-6 bg-[var(--color-border)]/30 backdrop-blur-sm border border-[var(--color-border)] custom-scrollbar"
+    >
+      <img
+        src="https://ghchart.rshah.org/4070F4/victorcmarinho"
+        alt="Gráfico de Commits 2024 de Victor Marinho"
+        class="min-w-[700px] w-full h-auto opacity-90 hover:opacity-100 transition-opacity"
+        loading="lazy"
+      />
+    </div>
   </div>
 </section>
