@@ -1,5 +1,9 @@
 ---
 import RAVerificadaSelo from "./RAVerificadaSelo.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
 ---
@@ -10,7 +14,7 @@ const currentYear = new Date().getFullYear();
     <div class="flex flex-col gap-4">
         <RAVerificadaSelo />
         <p>
-            &copy; {currentYear} Victor C. Marinho. Todos os direitos reservados.
+            &copy; {currentYear} Victor C. Marinho. {t("footer.rights")}
         </p>
     </div>
     <nav aria-label="Redes Sociais" class="flex gap-6">
@@ -21,7 +25,7 @@ const currentYear = new Date().getFullYear();
             class="hover:text-[var(--color-text)] transition-colors"
             aria-label="Perfil no GitHub"
         >
-            GitHub
+            {t("footer.github")}
         </a>
         <a
             href="https://br.linkedin.com/in/victorcmarinho"
@@ -30,7 +34,7 @@ const currentYear = new Date().getFullYear();
             class="hover:text-[var(--color-text)] transition-colors"
             aria-label="Perfil no LinkedIn"
         >
-            LinkedIn
+            {t("footer.linkedin")}
         </a>
         <a
             href="https://resume.io/r/Hbcq2CKgR"
@@ -39,7 +43,7 @@ const currentYear = new Date().getFullYear();
             class="hover:text-[var(--color-text)] transition-colors"
             aria-label="Ver Currículo"
         >
-            Currículo
+            {t("footer.resume")}
         </a>
     </nav>
 </footer>

@@ -1,44 +1,45 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const experiences = [
   {
-    role: "Engenheiro de software sênior",
+    role: t("exp.senior_reclame"),
     company: "Reclame AQUI",
-    duration: "mar de 2025 - o momento",
-    description:
-      "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;",
+    duration: `mar de 2025 - ${t("exp.present")}`,
+    description: t("exp.reclame_desc"),
   },
   {
-    role: "Engenheira de software Pleno",
+    role: t("exp.mid_reclame"),
     company: "Reclame AQUI",
-    duration: "nov de 2022 - mar de 2025",
-    description:
-      "Atuando na equipe de desenvolvimento de software do Reclame Aqui com as tecnologias React, Next.js e Node.js;",
+    duration: `nov de 2022 - mar de 2025`,
+    description: t("exp.reclame_desc"),
   },
   {
-    role: "Desenvolvedor de front-end Senior",
+    role: t("exp.senior_zappts"),
     company: "Zappts",
-    duration: "mai de 2021 - nov de 2022",
-    description:
-      "Liderança técnica e desenvolvimento focado em escalabilidade.",
+    duration: `mai de 2021 - nov de 2022`,
+    description: t("exp.zappts_senior_desc"),
   },
   {
-    role: "Desenvolvedor de front-end",
+    role: t("exp.frontend_zappts"),
     company: "Zappts",
-    duration: "mai de 2020 - nov de 2022",
-    description:
-      "Ajudando equipes a construir e projetar arquiteturas web e mobile com foco em escalabilidade, boas práticas e código limpo. Tecnologias como Angular, React, Typescript, e AWS.",
+    duration: `mai de 2020 - nov de 2022`,
+    description: t("exp.zappts_desc"),
   },
   {
-    role: "Desenvolvedor de front-end",
+    role: t("exp.frontend_hipr"),
     company: "Hipr Sistemas",
-    duration: "out de 2018 - mai de 2020",
-    description: "Desenvolvimento de interfaces e aplicações front-end.",
+    duration: `out de 2018 - mai de 2020`,
+    description: t("exp.hipr_desc"),
   },
   {
-    role: "Desenvolvedor da web",
+    role: t("exp.web_autonomo"),
     company: "Autônomo",
-    duration: "ago de 2017 - mai de 2020",
-    description: "Criação de soluções web personalizadas.",
+    duration: `ago de 2017 - mai de 2020`,
+    description: t("exp.autonomo_desc"),
   },
 ];
 ---
@@ -54,7 +55,7 @@ const experiences = [
         id="experience-heading"
         class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
       >
-        Experiência
+        {t("exp.title")}
       </h2>
     </div>
     <div class="md:col-span-8 space-y-12">

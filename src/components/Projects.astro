@@ -1,5 +1,9 @@
 ---
 import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface GithubRepo {
   name: string;
@@ -26,7 +30,7 @@ const projects =
   githubProjects.length > 0
     ? githubProjects.map((repo) => ({
         name: repo.name,
-        description: repo.description || "Sem descrição disponível.",
+        description: repo.description || t("projects.no_desc"),
         url: repo.html_url,
         language: repo.language || "Markdown",
       }))
@@ -53,11 +57,10 @@ const projects =
           id="projects-heading"
           class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
         >
-          Projetos
+          {t("projects.title")}
         </h2>
         <p class="mt-4 text-[var(--color-muted)] font-light text-sm">
-          Alguns dos meus projetos e contribuições open source recentes no
-          GitHub.
+          {t("projects.subtitle")}
         </p>
       </div>
     </div>
@@ -116,7 +119,7 @@ const projects =
       <h3
         class="text-sm font-semibold text-[var(--color-text)] uppercase tracking-wider"
       >
-        Contribuições
+        {t("projects.contributions")}
       </h3>
       <div class="h-px flex-1 bg-[var(--color-border)]"></div>
     </div>

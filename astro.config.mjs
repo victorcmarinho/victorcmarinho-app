@@ -7,6 +7,13 @@ import AstroPWA from '@vite-pwa/astro';
 export default defineConfig({
   site: "https://victorcmarinho.github.io",
   base: "/victorcmarinho-app",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pt", "es"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   image: {
     domains: ["ghchart.rshah.org"],
   },
