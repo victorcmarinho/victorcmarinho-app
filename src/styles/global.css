@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #09090b;
+    --color-text: #fafafa;
+    --color-primary: #6366f1; /* Indigo 500 */
+    --color-muted: #a1a1aa; /* Zinc 400 */
+    --color-border: #27272a; /* Zinc 800 */
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
