@@ -18,10 +18,10 @@ export default defineConfig({
       background_color: "#fff",
       display: "standalone",
       icons: [
-        { src: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-        { src: "/icon-256x256.png", sizes: "256x256", type: "image/png" },
-        { src: "/icon-384x384.png", sizes: "384x384", type: "image/png" },
-        { src: "/icon-512x512.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+        { src: "/icon-192x192.webp", sizes: "192x192", type: "image/webp" },
+        { src: "/icon-256x256.webp", sizes: "256x256", type: "image/webp" },
+        { src: "/icon-384x384.webp", sizes: "384x384", type: "image/webp" },
+        { src: "/icon-512x512.webp", sizes: "512x512", type: "image/webp", purpose: "any maskable" }
       ]
     },
     workbox: {
