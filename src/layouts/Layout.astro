@@ -32,6 +32,35 @@ const { title } = Astro.props;
 			href={`${import.meta.env.BASE_URL}manifest.webmanifest`}
 		/>
 		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content="Victor C. Marinho - Software Developer | Front End | Angular React Flutter"
+		/>
+		<meta
+			property="og:image"
+			content={new URL("og-image.png", Astro.site)}
+		/>
+		<meta property="og:site_name" content="Victor Marinho" />
+		<meta property="og:locale" content="pt_BR" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta
+			property="twitter:description"
+			content="Victor C. Marinho - Software Developer | Front End | Angular React Flutter"
+		/>
+		<meta
+			property="twitter:image"
+			content={new URL("og-image.png", Astro.site)}
+		/>
 
 		<!-- Google Fonts: Inter as the primary sans-serif -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
