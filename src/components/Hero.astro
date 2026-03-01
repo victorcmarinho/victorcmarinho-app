@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section
+    class="py-24 md:py-32 flex flex-col justify-center min-h-[80vh]"
+    aria-label="Apresentação"
+>
+    <div class="space-y-6">
+        <Image
+            src="/perfil.webp"
+            alt="Victor Marinho"
+            loading="eager"
+            width={128}
+            height={128}
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-[var(--color-primary)] object-cover shadow-xl bg-[var(--color-border)]"
+        />
+        <h1
+            class="text-5xl md:text-7xl font-extrabold tracking-tight text-balance text-[var(--color-text)]"
+        >
+            Hi, I'm <span class="text-[var(--color-primary)]"
+                >Victor C. Marinho</span
+            >
+        </h1>
+        <p
+            class="text-xl md:text-2xl text-[var(--color-muted)] max-w-2xl text-balance font-light leading-relaxed"
+        >
+            Software Developer | Front End | Angular · React · Flutter
+        </p>
+        <nav
+            aria-label="Ações de Introdução"
+            class="pt-8 flex items-center gap-4"
+        >
+            <a
+                href="mailto:victorcmarinho@gmail.com?subject=Gostaria de saber mais"
+                class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-[var(--color-bg)] bg-[var(--color-text)] hover:opacity-80 transition-opacity duration-200"
+                aria-label="Entre em contato via Email"
+            >
+                Contato
+            </a>
+            <a
+                href="#about"
+                class="inline-flex items-center justify-center px-6 py-3 border border-[var(--color-border)] text-base font-medium rounded-full text-[var(--color-text)] hover:bg-[var(--color-border)] transition-colors duration-200"
+            >
+                Ver mais
+            </a>
+        </nav>
+    </div>
+</section>

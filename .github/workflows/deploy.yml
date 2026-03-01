@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Aciona a action toda vez que fizer um push na branch main
+  push:
+    branches: [ main ]
+  # Permite rodar a action manualmente a partir da aba Actions do GitHub
+  workflow_dispatch:
+
+# Permissões necessárias pro GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite apenas um deploy por vez (os mais novos sobressaem os antigos na fila)
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # O Astro disponibiliza uma action pronta que faz todo o setup, instala e gera a build
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          package-manager: pnpm@latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

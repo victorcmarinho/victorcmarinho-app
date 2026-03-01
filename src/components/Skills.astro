@@ -1,0 +1,40 @@
+---
+const skills = [
+    "Astro",
+    "Svelte",
+    "React",
+    "Next.js",
+    "Angular",
+    "Flutter",
+    "TypeScript",
+    "Node.js",
+    "NestJS",
+    "Tailwind CSS",
+];
+---
+
+<section
+    id="skills"
+    class="py-20 border-t border-[var(--color-border)]"
+    aria-labelledby="skills-heading"
+>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-4">
+            <h2
+                id="skills-heading"
+                class="text-3xl font-bold tracking-tight text-[var(--color-text)]"
+            >
+                Habilidades
+            </h2>
+        </div>
+        <ul class="md:col-span-8 flex flex-wrap gap-3">
+            {
+                skills.map((skill) => (
+                    <li class="px-5 py-2 border border-[var(--color-border)] text-[var(--color-text)] rounded-full text-sm font-medium hover:bg-[var(--color-border)] hover:text-[var(--color-primary)] transition duration-300 cursor-default">
+                        {skill}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>
